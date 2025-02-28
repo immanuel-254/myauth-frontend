@@ -1,0 +1,31 @@
+package components
+
+templ LoginForm() {
+    <div class="flex flex-col items-center justify-center h-screen">
+        <div class={Card, "px-10"}>
+            <div class={CardHeader, "text-center"}>
+                <div class={CardTitle}>
+                    Login
+                </div>
+                <br/>
+                <div class={CardDescription}>
+                    Type in your Email Address and Password
+                </div>
+            </div>
+
+            <form method="post">
+                <div class={CardContent, "w-96"}>
+                    <label class={Label} for="email">Your email address</label>
+                    <input type="email" class={Input} id="email" name="email" placeholder="Email"/>
+                    <br/>
+                    <label class={Label} for="password">Password</label>
+                    <input type="password" class={Input} id="password" name="password" placeholder="Password"/>
+                </div>
+                <div class={CleanClasses([]string{CardFooter, "flex flex-col items-center justify-center"})}>
+                    @Button("submit", "Submit", "default", "default", "rounded-md")
+                    <a href="#" class="my-2">Forgot Password?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+}

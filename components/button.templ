@@ -1,0 +1,8 @@
+package components
+
+templ Button(buttonType, name, variant, size, class string) {
+    if class == ""{
+         <button type={buttonType} class={ButtonVariant(variant), ButtonSize(size)}>{name}</button>
+    } else {
+    <button type={buttonType} class={ButtonVariant(variant), ButtonSize(size), class}>{name}</button>}
+}

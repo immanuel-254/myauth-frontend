@@ -18,12 +18,11 @@ templ NavBar() {
                         <div class={NavigationMenu}>
                             <div class={NavigationMenuList}>
                                 <div class="text-sm -mt-2">
-                                    <div class={CleanClasses([]string{DropDownMenu, "text-sm me-2"})}>
-                                        Settings
-
+                                    <div class={CleanClasses([]string{DropDownMenu, "flex flex-col text-sm me-2"})}>
+                                        <button type="button" class="text-primary underline-offset-4" style="margin-top: .125rem;">Settings</button>
                                         <div class={DropDownMenuContent}>
                                             <div class={DropDownLabel}>
-                                                MyAccount
+                                                Account
                                             </div>
                                             <hr class="-mx-1 my-1 h-px bg-muted"/>
                                             <div class={DropDownMenuItem}><a href="#">Profile</a></div>

@@ -33,7 +33,9 @@ func main() {
 	http.HandleFunc("/index", func(w http.ResponseWriter, r *http.Request) {
 		http.ServeFile(w, r, "./index.html")
 	})
+
 	http.Handle("/", templ.Handler(component))
+	http.Handle("/login", templ.Handler(pages.Base(pages.LoginPage())))
 
 	fmt.Println("Listening on :5000")
 	http.ListenAndServe(":5000", nil)

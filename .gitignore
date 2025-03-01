@@ -26,3 +26,4 @@ go.work.sum
 
 *_templ.go
 *.html
+script.js

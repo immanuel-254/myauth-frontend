@@ -38,7 +38,11 @@ func main() {
 	})
 
 	http.Handle("/", templ.Handler(component))
+	http.Handle("/profile", templ.Handler(pages.Base(pages.ProfilePage())))
 	http.Handle("/login", templ.Handler(pages.Base(pages.LoginPage())))
+	http.Handle("/logout", templ.Handler(pages.Base(pages.LogoutPage())))
+	http.Handle("/change-password", templ.Handler(pages.Base(pages.ChangePasswordPage())))
+	http.Handle("/reset-password", templ.Handler(pages.Base(pages.ResetPasswordPage())))
 
 	fmt.Println("Listening on :5000")
 	http.ListenAndServe(":5000", nil)

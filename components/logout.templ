@@ -1,0 +1,21 @@
+package components
+
+templ LogoutForm() {
+    <div class="flex flex-col items-center justify-center h-screen">
+        <div class={Card, "px-10"}>
+            <div class={CardHeader, "text-center"}>
+                <div class={CardTitle}>
+                    Logout
+                </div>
+            </div>
+            <form method="post">
+                <div class={CardContent, "w-96"}>
+                    <p class="text-center">Are you sure?</p>
+                </div>
+                <div class={CleanClasses([]string{CardFooter, "flex flex-col items-center justify-center"})}>
+                    @Button("submit", "Logout", "default", "default", "rounded-md")
+                </div>
+            </form>
+        </div>
+    </div>
+}

@@ -1,0 +1,44 @@
+package components
+
+templ Profile() {
+    <!--<div className="flex flex-col items-center justify-center h-screen">
+        <div class={Card, "px-10"}>
+            <div class={CardHeader}>
+                <div class={CleanClasses([]string{CardTitle, "flex flex-col items-center justify-center"})}>
+                    Profile
+                </div>
+                <hr/>
+                <br/>
+            </div>
+        </div>
+
+        <div class={CardContent, "w-96"}>
+            <p>Email: text@example.com</p>
+            <br />
+            <div className="grid grid-cols-2">
+                <div>
+                <p>Password: ***********</p>
+                </div>
+                <div><a href="/change-password"><i data-lucide="penicon" class="h-5 w-5"></i></a></div>
+            </div>
+        </div>
+        <hr/>
+    </div>-->
+
+    <div class="flex flex-col items-center justify-center h-screen">
+        <div class={Card, "px-10"}>
+            <div class={CardHeader}>
+                <div class={CardTitle}>
+                    Profile
+                </div>
+                <br/>
+            </div>
+
+            <div class={CardContent, "w-96 -mt-2"}>
+                <p>Email: text@example.com</p>
+                <br />
+                <p>Password: ********* <a href="/change-password">change?</a></p>
+            </div>
+        </div>
+    </div>
+}

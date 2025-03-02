@@ -1,41 +1,23 @@
 package components
 
 templ NavBar() {
-        <div aria-label="Main" data-orientation="horizontal" dir="ltr" class="fixed top-0 left-0 w-full flex justify-center z-50 py-2 bg-background border-b border-black dark:border-white">
+        <div class="fixed top-0 left-0 w-full flex justify-center z-50 py-2 bg-background border-b border-black dark:border-white">
             <div>
                 <a href="/" class="absolute left-4 top-2 text-lg"> Auth </a>
             </div>
 
             <nav class={NavigationMenu}>
                 <div class={NavigationMenuList}>
-                    <a href="#" class="text-sm px-2">Docs</a>
-                    <a href="#" class="text-sm px-2">Contact</a>
-                    <a href="#" class="text-sm px-2">About</a>
+                    <a href="/profile" class="text-sm px-2">Profile</a>
+                    <a href="#" class="text-sm px-2">Users</a>
+                    <a href="#" class="text-sm px-2">Logins</a>
+                    <a href="#" class="text-sm px-2">Activities</a>
                 </div>
             </nav>
 
-            <div class="absolute right-4 top-2 text-lg me-10">
-                        <div class={NavigationMenu}>
-                            <div class={NavigationMenuList}>
-                                <div class="text-sm -mt-2">
-                                    <div class={CleanClasses([]string{DropDownMenu, "flex flex-col text-sm me-2"})} x-data="{ open: false }">
-                                        <button type="button" class="text-primary underline-offset-4" style="margin-top: .125rem;" @click="open = !open" @click.outside="open = false">Settings</button>
-                                        <div class={DropDownMenuContent} x-show="open" x-cloak x-transition>
-                                            <div class={DropDownLabel}>
-                                                Account
-                                            </div>
-                                            <hr class="-mx-1 my-1 h-px bg-muted"/>
-                                            <div class={DropDownMenuItem} @click="open = false"><a href="#">Profile</a></div>
-                                            <div class={DropDownMenuItem} @click="open = false"><a href="#">Logout</a></div>
-                                        </div>
-                                    </div>
-                                </div> 
-
-                                
-                            </div>
-                        </div>
-
-                    </div>
+            <div>
+                <a href="/logout" class="absolute right-4 top-2 text-sm" style="margin-top: .250rem;"> Logout </a>
+            </div>
 
         </div>
 }

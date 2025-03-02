@@ -1,0 +1,24 @@
+package pages
+
+import "github.com/immanuel-254/myauth-frontend/components"
+
+templ LoginPage() {
+      @components.LoginForm()
+}
+
+templ LogoutPage() {
+      @components.LogoutForm()
+}
+
+templ ChangePasswordPage() {
+      @components.ChangePasswordForm()
+}
+
+templ ResetPasswordPage() {
+      @components.ResetPasswordForm()
+}
+
+templ ProfilePage() {
+      @components.NavBar()
+      @components.Profile()
+}

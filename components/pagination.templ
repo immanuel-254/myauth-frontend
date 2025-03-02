@@ -1,0 +1,26 @@
+package components
+
+templ PaginationComponent(Text string) {
+    <nav role="navigation" aria-label="pagination" class={Pagination}>
+        <ul class={PaginationContent}>
+            <li>
+                <a href="#" class={ButtonVariant("ghost"), ButtonSize("icon")}>
+                    <i data-lucide="chevron-left" class="h-4 w-4"></i>
+                </a>
+            </li>
+
+            <li class="mx-1">
+                <button type="button" class={ButtonVariant("ghost"), ButtonSize("default"), "rounded-md"}>
+                    {Text}
+                </button>
+            </li>
+
+            <li>
+                <a href="#" class={ButtonVariant("ghost"), ButtonSize("icon")}>
+                    <i data-lucide="chevron-right" class="h-4 w-4"></i>
+                </a>
+            </li>
+        </ul>
+
+    </nav>
+}

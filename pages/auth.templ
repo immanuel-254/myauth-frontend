@@ -22,3 +22,42 @@ templ ProfilePage() {
       @components.NavBar()
       @components.Profile()
 }
+
+templ Home() {
+      <div>
+            @components.NavBar()
+            <div class="pt-20">
+                  <p class="text-center text-6xl my-2 pb-4">Logins</p>
+                  <div class="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-4 mx-5">
+                        @components.Stats("Daily", "2 March 2025", "15", components.DailyForm())
+                        @components.Stats("Weekly", "week 5, 2025", "15", components.WeeklyForm())
+                        <div class="md:col-span-1 sm:col-span-2">
+                              @components.Stats("monthly", "March 2025", "15", components.MonthlyForm())
+                        </div>            
+                  </div>
+                  <hr class="mx-5 mt-5" />
+            </div>
+            <div class="mt-5">
+                  <p class="text-center text-6xl my-2 pb-4">Activity</p>
+                  <div class="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-4 mx-5">
+                        @components.Stats("Daily", "2 March 2025", "15", components.DailyForm())
+                        @components.Stats("Weekly", "week 5, 2025", "15", components.WeeklyForm())
+                        <div class="md:col-span-1 sm:col-span-2">
+                              @components.Stats("monthly", "March 2025", "15", components.MonthlyForm())
+                        </div>            
+                  </div>
+                  <hr class="mx-5 mt-5" />
+            </div>
+            <div class="mt-5">
+                  <p class="text-center text-6xl my-2 pb-4">User</p>
+                  <div class="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-4 mx-5">
+                        @components.Stats("Daily", "2 March 2025", "15", components.DailyForm())
+                        @components.Stats("Weekly", "week 5, 2025", "15", components.WeeklyForm())
+                        <div class="md:col-span-1 sm:col-span-2">
+                              @components.Stats("monthly", "March 2025", "15", components.MonthlyForm())
+                        </div>            
+                  </div>
+                  <hr class="mx-5 mt-5" />
+            </div>
+      </div>
+}

@@ -1,16 +1,18 @@
 package components
 
-templ Stats(Title, Text string, Number string, form templ.Component) {
-    <div class={Card, "px-10"}>
+import "fmt"
+
+templ Stats(Title, Text, Id, Number string, form templ.Component) {
+    <div x-data={fmt.Sprintf("{ text: '%s' }", Text)} class={Card, "px-10"}>
         <div class="flex justify-center gap-20 p-6 pt-8">
             <div class={CardTitle}>{Title}</div>
             <div class={CardTitle}>
-                <p class="text-6xl -mt-5">{Number}</p>
+                <p class="text-6xl -mt-5" id={Id}>{Number}</p>
             </div>
         </div>
         <hr/>
         <div class={CleanClasses([]string{CardContent, "flex flex-col items-center justify-center mt-4"})}>
-            @PaginationComponent(Text)
+            {Text}
         </div>
 
         <div class={CleanClasses([]string{CardFooter, "flex flex-col items-center justify-center text-center"})}>
@@ -19,20 +21,41 @@ templ Stats(Title, Text string, Number string, form templ.Component) {
     </div>
 }
 
-templ DailyForm() {
-    <div><input type="date" class={Input}/></div>
+templ DailyForm(Id, Stat string) {
+    <form hx-post={fmt.Sprintf("/daily-%s", Stat)} hx-target={fmt.Sprintf("#%s", Id)} class="grid grid-cols-2">
+        <div>
+            <input type="date" class={Input} id="dailyDate" name="dailyDate" x-model="text" required/>
+        </div>
+        <div>
+            @Button("submit", "Submit", "default", "default", "rounded-md")
+        </div>
+    </form>
 }
 
-templ WeeklyForm() {
-    <select id="weekly" name="weekly" class={Select}>
-        <option value="week 6">week 6, 2025</option>
-        <option value="week 7">Week 7, 2025</option>
-    </select>
+templ WeeklyForm(Id, Stat string) {
+    <form hx-post={fmt.Sprintf("/weekly-%s", Stat)} hx-target={fmt.Sprintf("#%s", Id)} class="grid grid-cols-2">
+        <div>
+            <select id="weekly" name="weekly" class={Select} x-model="text">
+                <option value="week 6, 2025">week 6, 2025</option>
+                <option value="week 7, 2025">Week 7, 2025</option>
+            </select>
+        </div>
+        <div>
+            @Button("submit", "Submit", "default", "default", "rounded-md")
+        </div>
+    </form>
 }
 
-templ MonthlyForm() {
-    <select id="monthly" name="monthly" class={Select}>
-        <option value="march">March, 2025</option>
-        <option value="april">April, 2025</option>
-    </select>
+templ MonthlyForm(Id, Stat string) {
+    <form hx-post={fmt.Sprintf("/monthly-%s", Stat)} hx-target={fmt.Sprintf("#%s", Id)} class="grid grid-cols-2">
+        <div>
+            <select id="monthly" name="monthly" class={Select} x-model="text">
+                <option value="March, 2025">March, 2025</option>
+                <option value="April, 2025">April, 2025</option>
+            </select>
+        </div>
+        <div>
+            @Button("submit", "Submit", "default", "default", "rounded-md")
+        </div>
+    </form>
 }

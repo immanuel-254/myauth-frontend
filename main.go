@@ -21,6 +21,13 @@ func main() {
 	http.HandleFunc("/index", func(w http.ResponseWriter, r *http.Request) {
 		http.ServeFile(w, r, "./index.html")
 	})
+	http.HandleFunc("/daily-login", func(w http.ResponseWriter, r *http.Request) {
+		if r.Method == http.MethodPost {
+			date := r.FormValue("dailyDate")
+
+			fmt.Fprintf(w, "%s", date)
+		}
+	})
 
 	http.Handle("/", templ.Handler(component))
 	http.Handle("/profile", templ.Handler(pages.Base(pages.ProfilePage())))

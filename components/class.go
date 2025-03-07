@@ -21,9 +21,6 @@ const (
 	DropDownLabel       = "px-2 py-1.5 text-sm font-semibold"
 	DropDownMenuItem    = "relative flex cursor-default select-none items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0"
 
-	Pagination        = "mx-auto flex w-full justify-center"
-	PaginationContent = "flex flex-row items-center gap-1"
-
 	Select = "flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background data-[placeholder]:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1"
 )
 

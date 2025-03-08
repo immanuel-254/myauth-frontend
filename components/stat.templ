@@ -32,6 +32,10 @@ templ DailyForm(Id, Stat string) {
     </form>
 }
 
+templ WeeklyForm() {
+    
+}
+
 templ MonthlyForm(Id, Stat string) {
     <form hx-post={fmt.Sprintf("/monthly-%s", Stat)} hx-target={fmt.Sprintf("#%s", Id)} class="grid grid-cols-2">
         <div>

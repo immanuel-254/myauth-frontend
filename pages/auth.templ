@@ -31,25 +31,34 @@ templ Home() {
             @components.NavBar()
             <div class="pt-20" id="login">
                   <p class="text-center text-6xl my-2 pb-4">Logins</p>
-                  <div class="grid grid-cols-1 md:grid-cols-2 sm:grid-cols-2 gap-4 mx-5">
-                        @components.Stats("Daily", now.Format("2006-01-02"), "dailyActivity", "15", components.DailyForm("dailyActivity", "activity"))
-                        @components.Stats("Monthly", "March 2025", "monthlyActivity", "15", components.MonthlyForm("monthlyActivity", "activity"))         
+                  <div class="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-4 mx-5">
+                        @components.Stats("Daily", now.Format("2006-01-02"), "dailyLogin" ,"15", components.DailyForm("dailyLogin", "login"))
+                        @components.Stats("Weekly", "", "weeklyLogin", "15", components.WeeklyForm())
+                        <div class="md:col-span-1 sm:col-span-2">
+                              @components.Stats("Monthly", "March 2025", "monthlyLogin", "15", components.MonthlyForm("monthlyLogin", "login"))
+                        </div>            
                   </div>
                   <hr class="mx-5 mt-5" />
             </div>
             <div class="mt-5" id="activity">
                   <p class="text-center text-6xl my-2 pb-4">Activity</p>
-                  <div class="grid grid-cols-1 md:grid-cols-2 sm:grid-cols-2 gap-4 mx-5">
+                  <div class="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-4 mx-5">
                         @components.Stats("Daily", now.Format("2006-01-02"), "dailyActivity", "15", components.DailyForm("dailyActivity", "activity"))
-                        @components.Stats("Monthly", "March 2025", "monthlyActivity", "15", components.MonthlyForm("monthlyActivity", "activity"))         
+                        @components.Stats("Weekly", "", "weeklyActivity", "15", components.WeeklyForm())
+                        <div class="md:col-span-1 sm:col-span-2">
+                              @components.Stats("Monthly", "March 2025", "monthlyActivity", "15", components.MonthlyForm("monthlyActivity", "activity"))
+                        </div>            
                   </div>
                   <hr class="mx-5 mt-5" />
             </div>
             <div class="mt-5" id="user">
                   <p class="text-center text-6xl my-2 pb-4">User</p>
-                  <div class="grid grid-cols-1 md:grid-cols-2 sm:grid-cols-2 gap-4 mx-5">
-                        @components.Stats("Daily", now.Format("2006-01-02"), "dailyActivity", "15", components.DailyForm("dailyActivity", "activity"))
-                        @components.Stats("Monthly", "March 2025", "monthlyActivity", "15", components.MonthlyForm("monthlyActivity", "activity"))         
+                  <div class="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-4 mx-5">
+                        @components.Stats("Daily", now.Format("2006-01-02"), "dailyUser", "15", components.DailyForm("dailyUser", "user"))
+                        @components.Stats("Weekly", "", "weeklyUser", "15", components.WeeklyForm())
+                        <div class="md:col-span-1 sm:col-span-2">
+                              @components.Stats("Monthly", "March 2025", "monthlyUser", "15", components.MonthlyForm("monthlyUser", "user"))
+                        </div>            
                   </div>
                   <hr class="mx-5 mt-5" />
             </div>
